@@ -10,9 +10,9 @@ contract StakingWithEmissionsTest is Test {
     KiratCoin kiratToken;
 
     function setUp() public {
-        kiratToken = new KiratCoin(address(this)); // address doesnt matter
+        kiratToken = new KiratCoin(address(this)); // KiratCoin deploy with random address
         stakingContract = new StakingWithEmissions(
-            IKiratToken(address(kiratToken))
+            IKiratToken(address(kiratToken)) // StakingContract deploy with
         );
         kiratToken.updateContract(address(stakingContract));
     }
